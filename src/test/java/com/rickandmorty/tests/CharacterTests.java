@@ -27,7 +27,7 @@ public class CharacterTests extends BaseTest {
                 .when()
                 .get(ENDPOINT)
                 .then()
-                .statusCode(SUCCESS_STATUS_CODE) // Validate status code
+                .statusCode(SUCCESS_STATUS_CODE)
                 .body("info", notNullValue())
                 .body("info.count", greaterThan(0))
                 .body("info.pages", greaterThan(0))
@@ -140,7 +140,7 @@ public class CharacterTests extends BaseTest {
                 .when()
                 .get(ENDPOINT)
                 .then()
-                .statusCode(SUCCESS_STATUS_CODE) // Validate status code
+                .statusCode(SUCCESS_STATUS_CODE)
                 .body("results", notNullValue())
                 .extract().response();
 
@@ -164,7 +164,6 @@ public class CharacterTests extends BaseTest {
 
     @Test
     public void testGetAllEpisodes() {
-        // Make request and validate status code
         Response response = given()
                 .spec(requestSpec)
                 .when()
